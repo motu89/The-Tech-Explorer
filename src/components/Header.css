@@ -42,24 +42,30 @@
 }
 
 @media (max-width: 992px) {
+  .site-title {
+    font-size: 1.3rem; /* reduced from 1.8rem */
+    text-align: center;
+    margin-top: 10px;
+  }
+
   .nav-link {
+    font-size: 1rem; /* optional, slightly smaller nav links */
     margin: 5px 0;
     text-align: center;
   }
-  
-  .text-center-mobile {
-    text-align: center !important;
+
+  .navbar-spacer {
+    height: 60px; /* smaller height for mobile */
   }
-  
-  /* Style for hamburger icon */
+
   .navbar-toggler-purple {
     border-color: #9d4edd !important;
   }
-  
+
   .navbar-toggler-purple:focus {
     box-shadow: 0 0 0 0.25rem rgba(157, 78, 221, 0.25) !important;
   }
-  
+
   .navbar-toggler-purple .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%239d4edd' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
   }
