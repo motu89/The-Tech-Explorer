@@ -1,0 +1,270 @@
+/* Page Header */
+.page-header {
+  background: transparent;
+  color: white;
+  padding: 80px 0 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.3);
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(4, 30, 66, 0.7), rgba(45, 29, 77, 0.7));
+  z-index: -1;
+  pointer-events: none;
+  animation: reviewsHeaderPulse 15s infinite alternate;
+}
+
+@keyframes reviewsHeaderPulse {
+  0% {
+    opacity: 0.7;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.7), rgba(45, 29, 77, 0.7));
+  }
+  50% {
+    opacity: 0.9;
+    background: linear-gradient(135deg, rgba(45, 29, 77, 0.7), rgba(4, 30, 66, 0.7));
+  }
+  100% {
+    opacity: 0.7;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.7), rgba(45, 29, 77, 0.7));
+  }
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Service Reviews Section */
+.service-reviews-section {
+  margin-bottom: 60px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.service-reviews-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(4, 30, 66, 0.4), rgba(10, 10, 26, 0.4));
+  z-index: -1;
+  pointer-events: none;
+  animation: reviewsSectionPulse 20s infinite alternate;
+}
+
+@keyframes reviewsSectionPulse {
+  0% {
+    opacity: 0.3;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.4), rgba(10, 10, 26, 0.4));
+  }
+  50% {
+    opacity: 0.5;
+    background: linear-gradient(135deg, rgba(10, 10, 26, 0.4), rgba(4, 30, 66, 0.4));
+  }
+  100% {
+    opacity: 0.3;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.4), rgba(10, 10, 26, 0.4));
+  }
+}
+
+.service-title {
+  color: #9d4edd; /* Shade of purple */
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(157, 78, 221, 0.2);
+}
+
+/* Review Cards */
+.review-card {
+  height: 100%;
+  border: 1px solid rgba(0, 200, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 200, 255, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(74, 0, 224, 0.1);
+  font-size: 24px;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star-icon {
+  color: #FFD700;
+}
+
+.review-text {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #a0c8ff; /* Light blue */
+}
+
+.reviewer-info {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.reviewer-name {
+  margin-bottom: 5px;
+  color: #9d4edd; /* Shade of purple */
+  font-weight: 600;
+}
+
+.reviewer-location {
+  color: #a0c8ff; /* Light blue */
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(to bottom, #1a1a1a, #2d1d4d);
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid rgba(157, 78, 221, 0.3);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .page-header {
+    padding: 60px 0 40px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .page-subtitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 50px 0 30px;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  /* Center align review cards on mobile */
+  .review-card {
+    text-align: center;
+  }
+  
+  .service-title {
+    text-align: center;
+  }
+  
+  /* Center rating stars */
+  .rating {
+    justify-content: center;
+  }
+}
+
+.cta-section h2 {
+  color: #9d4edd;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta-section p {
+  color: #a0c8ff;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(30, 30, 30, 0.5);
+  border-radius: 10px;
+  display: inline-block;
+  border: 1px solid rgba(0, 200, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 200, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  color: #a0c8ff;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .page-header {
+    padding: 60px 0 40px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .service-reviews-section {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 50px 0 30px;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .service-reviews-section {
+    margin-bottom: 30px;
+  }
+}

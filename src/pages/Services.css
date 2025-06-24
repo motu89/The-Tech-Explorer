@@ -1,0 +1,322 @@
+/* Page Header */
+.page-header {
+  background: transparent;
+  color: white;
+  padding: 80px 0 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.3);
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(4, 30, 66, 0.7), rgba(45, 29, 77, 0.7));
+  z-index: -1;
+  pointer-events: none;
+  animation: pageHeaderPulse 15s infinite alternate;
+}
+
+@keyframes pageHeaderPulse {
+  0% {
+    opacity: 0.7;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.7), rgba(45, 29, 77, 0.7));
+  }
+  50% {
+    opacity: 0.9;
+    background: linear-gradient(135deg, rgba(45, 29, 77, 0.7), rgba(4, 30, 66, 0.7));
+  }
+  100% {
+    opacity: 0.7;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.7), rgba(45, 29, 77, 0.7));
+  }
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Service Cards */
+.service-detail-card {
+  height: 100%;
+  border: 1px solid rgba(0, 200, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 200, 255, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-color: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.service-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(4, 30, 66, 0.2), rgba(10, 10, 26, 0.2));
+  z-index: -1;
+  pointer-events: none;
+  animation: serviceCardPulse 10s infinite alternate;
+}
+
+@keyframes serviceCardPulse {
+  0% {
+    opacity: 0.5;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.2), rgba(10, 10, 26, 0.2));
+  }
+  50% {
+    opacity: 0.7;
+    background: linear-gradient(135deg, rgba(10, 10, 26, 0.2), rgba(4, 30, 66, 0.2));
+  }
+  100% {
+    opacity: 0.5;
+    background: linear-gradient(135deg, rgba(4, 30, 66, 0.2), rgba(10, 10, 26, 0.2));
+  }
+}
+
+.service-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.service-icon-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  color: white;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.service-icon {
+  font-size: 24px;
+}
+
+.service-title {
+  margin: 0;
+  color: #9d4edd; /* Shade of purple */
+  font-weight: 600;
+}
+
+.service-description {
+  margin-bottom: 20px;
+  color: #a0c8ff; /* Light blue */
+}
+
+.features-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #9d4edd; /* Shade of purple */
+}
+
+.features-list {
+  padding-left: 20px;
+}
+
+.features-list li {
+  margin-bottom: 8px;
+  position: relative;
+  color: #a0c8ff; /* Light blue */
+}
+
+.features-list li::before {
+  content: '✓';
+  color: #9d4edd; /* Shade of purple */
+  position: absolute;
+  left: -20px;
+}
+
+/* Availability Section */
+.availability-section {
+  background: transparent;
+  padding: 60px 0;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.availability-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(74, 0, 224, 0.2), rgba(142, 45, 226, 0.2));
+  z-index: -1;
+  pointer-events: none;
+  animation: availabilitySectionPulse 15s infinite alternate;
+}
+
+.availability-section h2 {
+  color: #4A00E0;
+  margin-bottom: 20px;
+}
+
+.availability-badge {
+  display: inline-block;
+  background: linear-gradient(to right, rgba(74, 0, 224, 0.8), rgba(142, 45, 226, 0.8));
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(142, 45, 226, 0.3);
+  animation: badgePulse 5s infinite alternate;
+}
+
+@keyframes badgePulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(74, 0, 224, 0.3);
+    background: linear-gradient(to right, rgba(74, 0, 224, 0.8), rgba(142, 45, 226, 0.8));
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(142, 45, 226, 0.5);
+    background: linear-gradient(to right, rgba(74, 0, 224, 0.9), rgba(142, 45, 226, 0.9));
+  }
+}
+
+/* Contact CTA Section */
+.contact-cta {
+  background: linear-gradient(to bottom, #1a1a1a, #2d1d4d);
+  color: white;
+  text-align: center;
+  padding: 60px 0;
+  border-top: 1px solid rgba(157, 78, 221, 0.3);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-cta h2 {
+  color: #9d4edd;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Animation for availability section */
+@keyframes availabilitySectionPulse {
+  0% {
+    opacity: 0.3;
+    background: linear-gradient(135deg, rgba(74, 0, 224, 0.2), rgba(142, 45, 226, 0.2));
+  }
+  50% {
+    opacity: 0.5;
+    background: linear-gradient(135deg, rgba(74, 0, 224, 0.3), rgba(142, 45, 226, 0.3));
+  }
+  100% {
+    opacity: 0.4;
+    background: linear-gradient(135deg, rgba(142, 45, 226, 0.2), rgba(74, 0, 224, 0.2));
+  }
+}
+
+.contact-cta p {
+  color: #a0c8ff;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  display: inline-block;
+  border: 1px solid rgba(157, 78, 221, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  color: #a0c8ff;
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .page-header {
+    padding: 60px 0 40px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 50px 0 30px;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .page-subtitle {
+    text-align: center;
+  }
+  
+  /* Center align service cards on mobile */
+  .service-detail-card {
+    text-align: center;
+  }
+  
+  /* Center service headers on mobile */
+  .service-header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .service-icon-container {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .service-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .service-icon-container {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

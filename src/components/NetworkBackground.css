@@ -1,0 +1,160 @@
+.network-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: #041e42; /* Dark blue background matching the screenshot */
+  overflow: hidden;
+}
+
+.network-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Network nodes */
+.node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #00c8ff; /* Bright blue color for nodes */
+  box-shadow: 0 0 15px 5px rgba(0, 200, 255, 0.5);
+  animation: pulse 3s infinite alternate;
+}
+
+/* Create network lines using pseudo-elements */
+.node::before, .node::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 200, 255, 0.8), rgba(0, 200, 255, 0) 80%);
+  transform-origin: left center;
+}
+
+.node:nth-child(1)::before {
+  transform: rotate(30deg);
+}
+
+.node:nth-child(1)::after {
+  transform: rotate(150deg);
+}
+
+.node:nth-child(2)::before {
+  transform: rotate(60deg);
+}
+
+.node:nth-child(2)::after {
+  transform: rotate(120deg);
+}
+
+.node:nth-child(3)::before {
+  transform: rotate(210deg);
+}
+
+.node:nth-child(3)::after {
+  transform: rotate(300deg);
+}
+
+.node:nth-child(4)::before {
+  transform: rotate(15deg);
+}
+
+.node:nth-child(4)::after {
+  transform: rotate(195deg);
+}
+
+.node:nth-child(5)::before {
+  transform: rotate(45deg);
+}
+
+.node:nth-child(5)::after {
+  transform: rotate(225deg);
+}
+
+.node:nth-child(6)::before {
+  transform: rotate(75deg);
+}
+
+.node:nth-child(6)::after {
+  transform: rotate(255deg);
+}
+
+.node:nth-child(7)::before {
+  transform: rotate(105deg);
+}
+
+.node:nth-child(7)::after {
+  transform: rotate(285deg);
+}
+
+.node:nth-child(8)::before {
+  transform: rotate(135deg);
+}
+
+.node:nth-child(8)::after {
+  transform: rotate(315deg);
+}
+
+.node:nth-child(9)::before {
+  transform: rotate(165deg);
+}
+
+.node:nth-child(9)::after {
+  transform: rotate(345deg);
+}
+
+.node:nth-child(10)::before {
+  transform: rotate(195deg);
+}
+
+.node:nth-child(10)::after {
+  transform: rotate(15deg);
+}
+
+/* Add a subtle overlay */
+.network-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(4, 30, 66, 0.5) 0%, rgba(4, 30, 66, 0.9) 100%);
+}
+
+/* Animation for nodes */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    box-shadow: 0 0 15px 5px rgba(0, 200, 255, 0.5);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px 8px rgba(0, 200, 255, 0.7);
+  }
+  100% {
+    opacity: 0.7;
+    box-shadow: 0 0 15px 5px rgba(0, 200, 255, 0.5);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .node {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .node::before, .node::after {
+    width: 100px;
+  }
+}

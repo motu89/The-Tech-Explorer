@@ -1,0 +1,65 @@
+.tech-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: #041e42; /* Dark blue base */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%23041e42"/><g opacity="0.7"><circle cx="200" cy="150" r="3" fill="%2300c8ff"/><circle cx="400" cy="250" r="3" fill="%2300c8ff"/><circle cx="600" cy="150" r="3" fill="%2300c8ff"/><circle cx="150" cy="300" r="3" fill="%2300c8ff"/><circle cx="650" cy="300" r="3" fill="%2300c8ff"/><circle cx="200" cy="450" r="3" fill="%2300c8ff"/><circle cx="400" cy="400" r="3" fill="%2300c8ff"/><circle cx="600" cy="450" r="3" fill="%2300c8ff"/><line x1="200" y1="150" x2="400" y2="250" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="400" y1="250" x2="600" y2="150" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="150" y1="300" x2="400" y2="250" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="400" y1="250" x2="650" y2="300" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="200" y1="450" x2="400" y2="400" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="400" y1="400" x2="600" y2="450" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="150" y1="300" x2="200" y2="450" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="650" y1="300" x2="600" y2="450" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="200" y1="150" x2="150" y2="300" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/><line x1="600" y1="150" x2="650" y2="300" stroke="%2300c8ff" stroke-width="1" opacity="0.5"/></g></svg>');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.tech-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(4, 30, 66, 0.5) 0%, rgba(4, 30, 66, 0.9) 100%);
+  animation: pulse 15s infinite alternate;
+}
+
+/* Add floating particles */
+.tech-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.3) 0%, transparent 2%),
+    radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.3) 0%, transparent 2%),
+    radial-gradient(circle at 40% 70%, rgba(0, 200, 255, 0.3) 0%, transparent 2%),
+    radial-gradient(circle at 70% 90%, rgba(0, 200, 255, 0.3) 0%, transparent 2%),
+    radial-gradient(circle at 10% 90%, rgba(0, 200, 255, 0.3) 0%, transparent 2%),
+    radial-gradient(circle at 90% 60%, rgba(0, 200, 255, 0.3) 0%, transparent 2%);
+  animation: float 20s infinite linear;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
